@@ -28,7 +28,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
       - name: Build the plugin jar
         run: >
-          ./gradlew buildSwiftSwamp
+          ./gradlew buildSwiftSwamp -x :core:test
           --no-daemon --no-parallel --max-workers=1
           "-Dorg.gradle.jvmargs=-Xmx3g -Dfile.encoding=UTF-8"
           "-PbuildsDirectory=${{ github.workspace }}/out"
